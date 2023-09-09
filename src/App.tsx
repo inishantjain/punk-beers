@@ -11,6 +11,7 @@ function App() {
 
   const handleSearch = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!searchQuery) return; //prevent empty search
     setLoading(true);
     const res = await fetch(`https://api.punkapi.com/v2/beers?beer_name=${searchQuery}`);
     const data: Beer[] = await res.json();
