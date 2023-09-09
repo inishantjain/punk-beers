@@ -1,0 +1,249 @@
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-inline: .7rem;
+}
+
+.searchBox {
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.searchBox:hover>.searchInput,
+.searchInput:focus {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchBox:hover>.searchButton {
+  background: white;
+  color: #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+#cardGrid {
+  display: grid;
+  margin-block: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* place-items: center; */
+  /* align-items: center; */
+  min-height: 70vh;
+  gap: 1rem;
+  row-gap: 2rem;
+}
+
+/* card styling */
+.card {
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px #4069E2;
+  perspective: 1000px;
+}
+
+.card-inner {
+  transition: transform 0.8s;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-front,
+.card-back {
+  padding-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #393B45;
+  border-radius: 25px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front h3,
+.card-back h3 {
+  color: white;
+  text-align: center;
+  font-size: medium;
+  background-color: #E6EBEE;
+  border-radius: 25px 25px 0 0;
+  color: #393B45;
+  padding: 30px;
+  font-weight: 700;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-back h4 {
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
+.card-back ul {
+  padding-inline: 2rem;
+  font-size: 1.3rem;
+}
+
+.image-crop {
+  display: block;
+  position: relative;
+  background-color: #E6EBEE;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #4069E2;
+}
+
+.avatar {
+  display: inline;
+  object-fit: contain;
+  height: 230px;
+  width: 100%;
+}
+
+.bio {
+  display: block;
+  margin: 30px auto;
+  width: 280px;
+  height: auto;
+}
+
+.bio p {
+  color: #E6EBEE;
+  font-weight: lighter;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 280px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.stat {
+  font-size: 25px;
+  margin: 0;
+}
+
+.label {
+  margin: 0;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover>.searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+
+
+
+nav {
+  justify-content: space-around;
+  align-items: start;
+  row-gap: 1rem;
+  padding: 1rem;
+  flex-flow: wrap;
+}
+
+@media screen and (max-width: 980px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+
+
+/* loading */
+.lds-circle {
+  display: inline-block;
+  margin: 0 auto;
+  transform: translateZ(1px);
+}
+
+.lds-circle>div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes lds-circle {
+
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
